@@ -3,7 +3,7 @@
 		<div class = "row">
 			<div id="menu" class="d-flex justify-content-start col-md-4">
 				<div class="d-inline-flex bd-highlight">
-					<img src="img/logo.png">
+<!--					<img src="img/logo.png.png">-->
 				</div>
 			</div>
 			<div class="d-flex justify-content-center col-md-4">

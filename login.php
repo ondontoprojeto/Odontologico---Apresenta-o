@@ -35,7 +35,12 @@
 
 
 				<input id = "buttonEsqueciSenha" type = "submit" value = "Esqueci minha senha" class = "btn btn-light">
-				<input id = "buttonEntrar" type="submit" value = "Entrar" class="btn btn-light">
+				<input id = "buttonEntrar" type="submit" value = "Entrar" class="btn btn-light"><br>
+				
+				<?php
+                    if(isset($_GET['erro']))
+                        echo $_GET['erro'];
+                ?>
 			</form>
 		</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
