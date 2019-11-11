@@ -1,3 +1,4 @@
+<?php include 'validar.php'?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,8 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="styleHeader.css">
 	</head>
 	<body>
-		
-		<?php include 'header.php'?>
+		<?php include 'header.php';?>
 		<h1 class = "text-center">Visualizador (dia atual)</h1>
 		<!-- SESSÃO DO SISTEMA WEB -->
 		
@@ -19,75 +19,107 @@
 			<div class = "col"></div>
 		    <div class = "col-lg-5 mt-4">
 				<div class = "border">
-					<table class = "table table-hover border">
+					<table class = "table border">
 					  	<tr class = "bg-light">
 					  		<th><i class = "fa fa-user mr-2" aria-hidden="true"></i>Consultas</th>
 					  	</tr>
 					</table>
 					<div class="row">
-						<div class = "col-md-4 d-none d-md-block">
+						<div class = "col-md-4 d-none d-lg-block w-100">
 							<div class="bd-highlight ml-2">
-								<div id = "real" class="d-inline-flex bg-success border border-dark mb-1">
+								<?php
+									include_once 'conexao.php';
+			                        $sql = "SELECT COUNT(situacao) AS confirmados FROM atendimento WHERE situacao = 'Confirmado' AND data = left(now(), 10)";
+			                        $busca = mysqli_query($con, $sql);
+			                        if(mysqli_num_rows($busca) == 1){
+										$row = mysqli_fetch_array($busca);
+										$confirmado = $row['confirmados'];
+								?>
+								<div id = "real" class="d-inline-flex bg-success border border-dark mb-1 justify-content-center">
 									 <i class = "fa fa-users fa-2x m-2" aria-hidden="true"></i>
-		                            <span class = "estudos ml-2">
-		                                <h6 class = "text-center">Realizados</h6>
-		                                <h6 class = "text-center text-dark">X</h6>
+		                            <span class = "estudos">
+		                                <h6 class = "text-center">Confirmado</h6>
+		                                <h6 class = "text-center text-dark"><?php echo $row['confirmados']?></h6>
 		                            </span>
 								</div><br>
-								<div id = "agen" class="d-inline-flex bg-primary border border-dark mb-1">
+								<?php } ?>
+
+
+								<?php
+									include_once 'conexao.php';
+			                        $sql = "SELECT COUNT(situacao) AS agendado FROM atendimento WHERE data = left(now(), 10)";
+			                        $busca = mysqli_query($con, $sql);
+			                        if(mysqli_num_rows($busca) == 1){
+										$array = mysqli_fetch_array($busca);
+										$agendado = $array['agendado'];
+								?>
+								<div id = "agen" class="d-inline-flex bg-primary border border-dark mb-1 justify-content-center">
 									<i class = "fa fa-calendar fa-2x m-2" aria-hidden="true"></i>
-		                            <span class = "estudos ml-2">
+		                            <span class = "estudos">
 		                                <h6 class = "text-center pt-1">Agendados</h6>
-		                                <h6 class = "text-center text-dark">X</h6>
+		                                <h6 class = "text-center text-dark"><?php echo $array['agendado']?></h6>
 		                            </span>
 								</div><br>
-								<div id = "conf" class="d-inline-flex bg-warning border border-dark mb-1">
-		                            <i class = "fa fa-check fa-2x m-2" aria-hidden="true"></i>
-		                            <span class = "estudos ml-2">
-		                                <h6 class = "text-center pt-1">Confirmados</h6>
-		                                <h6 class = "text-center text-dark mr-3">X</h6>
-		                            </span>
-								</div><br>
-								<div id = "canc" class="d-inline-flex bg-danger border border-dark mb-1">
+								<?php }?>
+
+								<?php
+									include_once 'conexao.php';
+			                        $sql = "SELECT COUNT(situacao) AS cancelado FROM atendimento WHERE situacao = 'Cancelado' AND data = left(now(), 10)";
+			                        $busca = mysqli_query($con, $sql);
+			                        if(mysqli_num_rows($busca) == 1){
+										$rows = mysqli_fetch_array($busca);
+										$cancelado = $rows['cancelado'];
+;								?>
+								<div id = "canc" class="d-inline-flex bg-danger border border-dark mb-1 justify-content-center">
 									<i class = "fa fa-ban fa-2x m-2" aria-hidden="true"></i>
-		                            <span class = "estudos ml-2">
+		                            <span class = "estudos">
 		                                <h6 class = "text-center pt-1">Cancelados</h6>
-		                                <h6 class = "text-center text-dark">X</h6>
+		                                <h6 class = "text-center text-dark"><?php echo $rows['cancelado']?></h6>
 		                            </span>
 								</div>
+								<?php } ?>
+
 							</div>
 						</div>
 						<div class = "col-md-7 ml-2 w-50">
+
+							<?php 
+								include_once 'conexao.php';
+
+								if($confirmado == 0){
+									$porConfirm = 0;
+								} else {
+									$porConfirm = $confirmado / $agendado * 100;
+								};
+
+								if($agendado == 0) {
+									$porCancelado = 0;
+								} else {
+									$porCancelado = $cancelado / $agendado * 100;
+								};
+							?>
 							<p class="text-center mt-2">
 		                    	<strong>Comparativo de Consultas</strong>
 		                    </p>
-							<div class="progress-group">
-								<b>Realizado</b>
-								<span class="float-right"><b>80</b>/100</span>
-								<div class="progress progress-sm">
-									<div class="progress-bar bg-success" style="width: 80%"></div>
-								</div>
-							</div>
-					
-							<div class="progress-group">
-								<b>Agendado</b>
-								<span class="float-right"><b>75</b>/100</span>
-								<div class="progress progress-sm">
-									<div class="progress-bar bg-primary" style="width: 75%"></div>
-								</div>
-							</div>
-							<div class="progress-group">
+							<div class="progress-group mt-2">
 								<b>Confirmado</b>
-								<span class="float-right"><b>60</b>/100</span>
+								<span class="float-right"><b><?php echo $confirmado?></b>/ <b><?php  echo $agendado ?></b></span>
 								<div class="progress progress-sm">
-									<div class="progress-bar bg-warning" style="width: 60%"></div>
+									<div class="progress-bar bg-success" style="width: <?php echo $porConfirm?>%"></div>
 								</div>
 							</div>
-							<div class="progress-group">
-								<b>Cancelado</b>
-								<span class="float-right"><b>50</b>/100</span>
+							<div class="progress-group mt-2">
+								<b>Agendado</b>
+								<span class="float-right"><b><?php echo $agendado?></b></span>
 								<div class="progress progress-sm">
-									<div class="progress-bar bg-danger" style="width: 50%"></div>
+									<div class="progress-bar bg-primary" style="width: 100%"></div>
+								</div>
+							</div>
+							<div class="progress-group mt-2">
+								<b>Cancelado</b>
+								<span class="float-right"><b><?php echo $cancelado?></b>/ <b><?php echo $agendado?></b></span>
+								<div class="progress progress-sm">
+									<div class="progress-bar bg-danger" style="width: <?php echo $porCancelado?>%"></div>
 								</div>
 							</div>
 						</div>	
@@ -98,14 +130,14 @@
 		<!-- Área de visualização de próximos pacientes -->
 
 		    <div class = "col-lg-5 mt-4 overflow-auto" style = "max-height: 320px">
-		    	<table class="table border">
+		    	<table class="table border table-hover">
 		    		<thead>
 		    			<tr class = "bg-light">
 		    				<th colspan = "3" ><i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>Próximos Pacientes</th>
 		    			</tr>
 		    		</thead>
 					<thead>
-						<tr class = "bg-primary">
+						<tr class = "bg-primary text-white">
 							<th scope="col">Nome</th>
 							<th class = "text-center" scope="col">Horário</th>
 							<th class = "text-center" scope="col">Situação</th>
@@ -134,7 +166,7 @@
                         <tr>
 							<td><?php echo $nome ?></td>
 							<td class = "text-center"><?php echo $horario?></td>
-							<td class = "text-center"><?php echo $situacao?></td>
+							<td class = "text-center"><b><?php echo $situacao?></b></td>
 						</tr>
 					<?php }?>
 					</tbody>
@@ -286,7 +318,7 @@
 		                            AND 
 		                            d.id = a.dentista_id 
 		                            AND 
-		                            a.data = left(now(),10)";
+		                            a.data = left(now(),10) ORDER BY paciente_nome asc";
 
                                 $busca = mysqli_query($con, $sql);
                                 while($array = mysqli_fetch_array($busca)){

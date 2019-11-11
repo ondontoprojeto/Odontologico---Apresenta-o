@@ -1,9 +1,10 @@
+
 <div class = "row">
 	<header class="bg-light border border-dark pb-2 mb-4 col-md-12">
 		<div class = "row">
 			<div id="menu" class="d-flex justify-content-start col-md-4">
 				<div class="d-inline-flex bd-highlight">
-<!--					<img src="img/logo.png.png">-->
+					<img src="img/logo.png">
 				</div>
 			</div>
 			<div class="d-flex justify-content-center col-md-4">

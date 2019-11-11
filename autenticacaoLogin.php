@@ -11,6 +11,7 @@
 
 	if(mysqli_num_rows($result) == 1){
 		$array = mysqli_fetch_array($result);
+		$_SESSION['id'] = $array['id_user'];
 		$_SESSION["login"] = $array['login'];
 		$_SESSION['senha'] = $array['senha'];
 		header("location:home.php");

@@ -28,6 +28,8 @@
                             <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar Data</button>
                         </form>
 
+                        <a href="agendaTodos.php"><button class="btn btn-primary btn-md mr-3">Exibir todos</button></a>
+
                     <button type="button" class="btn btn-primary btn-md ml-1" data-toggle="modal" data-target="#modal1">Marcar Consulta</button>
                     <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
                     <!--Modal Formulário de Agendamento -->
@@ -143,7 +145,9 @@
                                     WHERE 
                                     a.paciente_id = p.id
                                     AND
-                                    a.dentista_id = d.id ORDER BY data, hora";
+                                    a.dentista_id = d.id
+                                    AND
+                                    data = left(now(),10) ORDER BY data, hora";
                                 $busca = mysqli_query($con, $sql);
 
                                 while($array = mysqli_fetch_array($busca)){
