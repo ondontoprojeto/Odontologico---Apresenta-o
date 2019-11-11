@@ -40,7 +40,7 @@
                                     AND
                                     prt.id = pr.procedimento_tipo_id
                                     AND
-                                    a.id = 11";
+                                    a.id = '$atendimento_id'";
                         $busca = mysqli_query($con, $sql);
                         $row = mysqli_fetch_assoc($busca);
                         $row['data'] = explode('-', $row['data']);

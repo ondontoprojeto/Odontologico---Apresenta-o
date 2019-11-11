@@ -20,6 +20,8 @@
         	<div class = "pl-5 pr-5">
                 <span class = "d-flex justify-content-start ml-1">
                     <input type="button" class ="btn btn-dark" onclick="window.print();" value="Imprimir">
+
+                    <a class = "ml-4" href="agenda.php"><button class = "btn btn-primary">voltar</button></a>
                 </span>
 
                 <div class = "overflow-auto ml-1 mr-1" style = "max-height: 520px">

@@ -22,6 +22,8 @@
         <div class = "pl-5 pr-5">
             <span class = "d-flex d-inline-flex mb-2">
                 <input type="button" class ="btn btn-dark" onclick="window.print();" value="Imprimir">
+
+                <a class = "ml-4" href="cadastro.php"><button class = "btn btn-primary">voltar</button></a>
             </span>
                 <!--Modal  Tela de Cadastro-->
             <div class = "overflow-auto mr-1 mt-3" style = "max-height: 550px">

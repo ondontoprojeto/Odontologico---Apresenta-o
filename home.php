@@ -38,7 +38,7 @@
 								<div id = "real" class="d-inline-flex bg-success border border-dark mb-1 justify-content-center">
 									 <i class = "fa fa-users fa-2x m-2" aria-hidden="true"></i>
 		                            <span class = "estudos">
-		                                <h6 class = "text-center">Confirmado</h6>
+		                                <h6 class = "text-center">Confirmados</h6>
 		                                <h6 class = "text-center text-dark"><?php echo $row['confirmados']?></h6>
 		                            </span>
 								</div><br>

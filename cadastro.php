@@ -25,7 +25,7 @@
                     <input class="form-control mr-2 ml-1" type="search" name = "nome">
                     <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar</button>
                 </form>
-                <a href="cadastroTodos.php"><button type="button" class="btn btn-primary btn-md ml-2">Exibir Todos</button></a>
+                <a href="cadastroTodos.php"><button type="button" class="btn btn-danger btn-md ml-2">Exibir Todos</button></a>
                 <button type="button" class="btn btn-primary btn-md ml-2" data-toggle="modal" data-target="#modalCadastro">Cadastrar Paciente</button>
 
                 <input type="button" class ="btn btn-dark ml-2" onclick="window.print();" value="Imprimir">
