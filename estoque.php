@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <div class = "overflow-auto ml-1 mr-1" style = "max-height: 550px">
-                    <table class="table w-100 mt-4 table-striped">
+                    <table class="table w-100 mt-4">
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col">Código</th>

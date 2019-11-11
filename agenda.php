@@ -19,16 +19,7 @@
     <h1 class = "text-center mb-3">Agendamento de Pacientes</h1>
         	<div class = "pl-5 pr-5">
                 <span class = "d-flex d-inline-flex mb-2">
-                        <form class="form-inline">
-                            <input class="form-control mr-2 ml-1" type="search" name = "nome">
-                            <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar Nome</button>
-                        </form>
-                        <form class="form-inline">
-                            <input class="form-control mr-2 ml-1" type="search" name = "dia">
-                            <button class="btn btn-primary btn-md mr-3" type="submit">Pesquisar Data</button>
-                        </form>
-
-                        <a href="agendaTodos.php"><button class="btn btn-primary btn-md mr-3">Exibir todos</button></a>
+                        <a href="agendaTodos.php"><button class="btn btn-primary btn-md mr-3 ml-1">Exibir Todos</button></a>
 
                     <button type="button" class="btn btn-primary btn-md ml-1" data-toggle="modal" data-target="#modal1">Marcar Consulta</button>
                     <input type="button" class ="btn btn-dark ml-5" onclick="window.print();" value="Imprimir">
