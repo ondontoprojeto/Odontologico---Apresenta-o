@@ -11,7 +11,23 @@
 	</head>
 	<body>
 		<?php include 'header.php';?>
-		<h1 class = "text-center">Visualizador (dia atual)</h1>
+		<?php 
+			include_once 'conexao.php';
+
+			$sql = "SELECT NOW() As hoje";
+			$busca = mysqli_query($con, $sql);
+			if(mysqli_num_rows($busca) == 1){
+				$array = mysqli_fetch_array($busca);
+
+				$hoje1 = substr($array['hoje'], 0, -9);
+
+				$hoje = explode('-', $hoje1);
+				$newHoje = $hoje[2] . "-" . $hoje[1]. "-" . $hoje[0];
+			};
+
+		?>
+
+		<h1 class = "text-center">Visualizador (<?php echo $newHoje?>)</h1>
 		<!-- SESSÃO DO SISTEMA WEB -->
 		
 		<!--Área de verificação de Consultas-->
@@ -262,7 +278,7 @@
 								<i class="fa fa-arrow-up text-white border fa-5x bg-success" aria-hidden="true"></i>
 								<span class = "consolidado">
 									<h6 class = "pt-2">Consultas Recebidas</h6>
-									<p class = "text-center text-success">R$ <?php echo $soma?>,00</p>
+									<a href="consolidado.php"><p class = "text-center text-success">R$ <?php echo $soma?>,00</p></a>
 								</span>
 							</td>
 						</tr>

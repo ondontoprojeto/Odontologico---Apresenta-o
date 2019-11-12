@@ -46,6 +46,7 @@
                         $sql = "SELECT * FROM paciente";
                         $buscar = mysqli_query($con, $sql); 
                         while($array = mysqli_fetch_array($buscar)){
+                            $id = $array['id'];
                             $data = $array['nascimento'];
 
                             $data = explode('-', $data);
@@ -58,7 +59,7 @@
                                 <td><?php echo $array['email']?></td>
                                 <td class = "d-flex justify-content-around">
 
-                                    <a style = "font-size:15px" class="btn btn-primary btn-sm"  style="color:#fff" href="#" role="button">
+                                    <a style = "font-size:15px" class="btn btn-primary btn-sm"  style="color:#fff" href="ficha.php?id=<?php echo $id?>" role="button">
                                         <i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
                                         Visualizar Ficha
                                     </a>

@@ -13,5 +13,5 @@
 
 	$msg = (mysqli_query($con, $sql)) ? "Gravado com sucesso" : "Erro ao gravar";
 
-	header("location:msgAtendimento.php?msg=".$msg);
+	header("location:msgDentista.php?msg=".$msg);
 ?>

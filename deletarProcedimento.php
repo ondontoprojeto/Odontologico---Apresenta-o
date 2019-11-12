@@ -4,7 +4,7 @@
 
 	$id = $_GET['id'];
 
-	$sql =  "DELETE FROM procedimento where id = $id";
+	$sql =  "DELETE FROM procedimento_tipo where id = $id";
 
 	$deletar = mysqli_query($con, $sql);
 ?>
@@ -24,7 +24,7 @@
 			<center>
 			    <h3>Deletado com Sucesso!</h3>
 			    <div style="margin-top: 10px">
-			    <a href="agenda.php" class="btn btn-sm btn-success" style="color:#fff">Voltar</a>
+			    <a href="adm.php" class="btn btn-sm btn-success" style="color:#fff">Voltar</a>
 			    </div>    
 			</center>
 		</div>

@@ -229,7 +229,7 @@
                                 <td><?php echo $array['email']?></td>
                                 <td class = "d-flex justify-content-around">
 
-                                    <a style = "font-size:15px" class="btn btn-primary btn-sm"  style="color:#fff" href="#" role="button">
+                                    <a style = "font-size:15px" class="btn btn-primary btn-sm"  style="color:#fff" href="ficha.php?id=<?php echo $id?>" role="button">
                                         <i class="fa fa-address-book-o mr-2" aria-hidden="true"></i>
                                         Visualizar Ficha
                                     </a>
