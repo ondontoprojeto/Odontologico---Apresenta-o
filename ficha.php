@@ -49,6 +49,8 @@
                 $complemento = $array['complemento'];
             }
         ?>
+        <h4 class="text-center mb-2">Dra. ADRIANE B. PIRES MAIA</h4>
+        <h4 class="text-center mb-2">Dra. CRISTIANI B. PIRES SANT'ANNA</h4>        
         <h1 class = "text-center mb-4">Ficha do Paciente - <?php echo $nome?></h1>
         <div class = "container">
             <input type="button" class ="btn btn-dark ml-2" onclick="window.print();" value="Imprimir">
@@ -170,6 +172,11 @@
                 <div class="form-group col-md-6">
                     <label for="pa">P.A:</label>
                     <input type="text" class="form-control" id="pa" placeholder="" name = "pa" value = "<?php echo $pa?>" disabled>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="queixaprinc">Queixas Principais:</label>
+                    <input type="text" class="form-control" id="queixaprinc" placeholder="" name = "queixaprinc" value = "<?php echo $queixaprinc?>" disabled>
                 </div>
             </div>
         </div>
