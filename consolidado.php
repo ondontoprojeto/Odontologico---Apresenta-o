@@ -39,7 +39,7 @@
 								</span>
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td class = "d-inline-flex border w-100">
 								<i class="fa fa-arrow-down text-white border fa-5x bg-danger" aria-hidden="true"></i>
 								<span class = "consolidado">
@@ -47,7 +47,7 @@
 									<p class = "text-center text-danger">R$00,00</p>
 								</span>
 							</td>
-						</tr>
+						</tr> -->
 					<?php }?>
 				  </tbody>
 				</table>

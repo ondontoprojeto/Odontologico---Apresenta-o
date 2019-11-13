@@ -115,7 +115,7 @@
 								};
 							?>
 							<p class="text-center mt-2">
-		                    	<strong>Comparativo de Consultas</strong>
+		                    	<a class = "text-dark" href="comparativo.php"><strong>Comparativo de Consultas</strong></a>
 		                    </p>
 							<div class="progress-group mt-2">
 								<b>Confirmado</b>
@@ -282,7 +282,7 @@
 								</span>
 							</td>
 						</tr>
-						<tr>
+					<!-- 	<tr>
 							<td class = "d-inline-flex border w-100">
 								<i class="fa fa-arrow-down text-white border fa-5x bg-danger" aria-hidden="true"></i>
 								<span class = "consolidado">
@@ -290,7 +290,7 @@
 									<p class = "text-center text-danger">R$00,00</p>
 								</span>
 							</td>
-						</tr>
+						</tr> -->
 					<?php }?>
 				  </tbody>
 				</table>
