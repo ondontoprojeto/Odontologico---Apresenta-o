@@ -155,13 +155,10 @@
                                     <input type="text" class="form-control" id="uf" name = "uf" value = "<?php echo $uf?>">
                                 </div>
                             </div>
+                           
                             <div class="form-group">
-                                <label>Situação da Ficha:</label>
-                                        <select name="situacaoficha" class="form-control" value = "<?php echo $situacaoficha?>">
-                                            <option value="" disabled selected>- Escolha -</option>
-                                            <option value="ativa">Ativa</option>
-                                            <option value="inativa">Inativa</option>
-                                        </select>
+                                <label for="situacaoficha">Situação da Ficha:</label>
+                                <input type="text" class="form-control" id="situacaoficha" name = "situacaoficha" value = "<?php echo $situacaoficha?>">
                             </div>
                             
                             <div class = "mb-2">
