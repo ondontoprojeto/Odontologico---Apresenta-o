@@ -71,7 +71,11 @@
                                         <a class="btn btn-success btn-sm" href="procedimento.php?atendimento_id=<?php echo $atendimento_id ?>" role="button">
                                             <i class="fa fa-medkit mr-2" aria-hidden="true"></i>
                                             Procedimentos
-                                        </a>                
+                                        </a>
+                                        <a class="btn btn-danger btn-sm"  style="color:#fff" onclick="excluir(<?php echo $array['atendimento_id']?>)" role="button">
+                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            Cancelar
+                                        </a>             
                                     </td>
                                 </tr>
                             <?php
