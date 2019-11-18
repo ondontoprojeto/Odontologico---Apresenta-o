@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php include "header.php"?>
+ <h1 class = "text-center mb-3">Comparativo de Consultas (Totalizado)</h1>
 <div class = "row">
 	<div class = "col"></div>
     <div class = "col-lg-10 mt-4">
@@ -30,11 +31,11 @@
 								$row = mysqli_fetch_array($busca);
 								$confirmado = $row['confirmados'];
 						?>
-						<div id = "real" class="d-inline-flex bg-success border border-dark mb-1 justify-content-center">
+						<div id = "real" class="d-inline-flex bg-success border border-dark mb-1 justify-content-center text-white">
 							 <i class = "fa fa-users fa-2x m-2" aria-hidden="true"></i>
-                            <span class = "estudos">
+                            <span class = "estudos text-white mt-1">
                                 <h6 class = "text-center">Confirmados</h6>
-                                <h6 class = "text-center text-dark"><?php echo $row['confirmados']?></h6>
+                                <h6 class = "text-center"><b><?php echo $row['confirmados']?></b></h6>
                             </span>
 						</div><br>
 						<?php } ?>
@@ -48,11 +49,11 @@
 								$array = mysqli_fetch_array($busca);
 								$agendado = $array['agendado'];
 						?>
-						<div id = "agen" class="d-inline-flex bg-primary border border-dark mb-1 justify-content-center">
+						<div id = "agen" class="d-inline-flex bg-primary border border-dark mb-1 justify-content-center text-white">
 							<i class = "fa fa-calendar fa-2x m-2" aria-hidden="true"></i>
                             <span class = "estudos">
                                 <h6 class = "text-center pt-1">Agendados</h6>
-                                <h6 class = "text-center text-dark"><?php echo $array['agendado']?></h6>
+                                <h6 class = "text-center"><b><?php echo $array['agendado']?></b></h6>
                             </span>
 						</div><br>
 						<?php }?>
@@ -65,11 +66,11 @@
 								$rows = mysqli_fetch_array($busca);
 								$cancelado = $rows['cancelado'];
 						?>
-						<div id = "canc" class="d-inline-flex bg-danger border border-dark mb-1 justify-content-center">
+						<div id = "canc" class="d-inline-flex bg-danger border border-dark mb-1 justify-content-center text-white">
 							<i class = "fa fa-ban fa-2x m-2" aria-hidden="true"></i>
                             <span class = "estudos">
                                 <h6 class = "text-center pt-1">Cancelados</h6>
-                                <h6 class = "text-center text-dark"><?php echo $rows['cancelado']?></h6>
+                                <h6 class = "text-center"><b><?php echo $rows['cancelado']?></b></h6>
                             </span>
 						</div>
 						<?php } ?>

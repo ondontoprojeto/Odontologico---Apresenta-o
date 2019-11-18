@@ -10,8 +10,7 @@
     $complemento = $_POST['complemento'];
 
 
-    $sql = "UPDATE estoque SET `numeroproduto`= '$nroProduto', `nomeproduto`='$nomeProduto', `categoria`= '$categoria', `quantidade`='$quantidade', `fornecedor`='$fornecedor', `vencimento`='$vencimento', `complemento`='$complemento' WHERE `id_estoque` = $id";
-
+    $sql = "UPDATE estoque SET `numeroproduto`= '$nroProduto', `nomeproduto`='$nomeProduto', `categoria`= '$categoria', `quantidade`='$quantidade', `fornecedor`='$fornecedor', `vencimento`='$vencimento', `complemento`='$complemento' WHERE `estoque_id` = $id";
 
     $atualizar = mysqli_query($con, $sql);
 ?>

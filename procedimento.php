@@ -43,6 +43,7 @@
                                     a.id = '$atendimento_id'";
                         $busca = mysqli_query($con, $sql);
                         $row = mysqli_fetch_assoc($busca);
+                        $data = $row['data'];
                         $row['data'] = explode('-', $row['data']);
                         $newdata = $row['data'][2] . "-" . $row['data'][1]. "-" . $row['data'][0];
                         ?>  

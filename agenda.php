@@ -16,7 +16,22 @@
 	</head>
 <body>
 	<?php include 'header.php'?>
-    <h1 class = "text-center mb-3">Agendamento de Pacientes</h1>
+   <?php 
+            include_once 'conexao.php';
+
+            $sql = "SELECT NOW() As hoje";
+            $busca = mysqli_query($con, $sql);
+            if(mysqli_num_rows($busca) == 1){
+                $array = mysqli_fetch_array($busca);
+
+                $hoje1 = substr($array['hoje'], 0, -9);
+
+                $hoje = explode('-', $hoje1);
+                $newHoje = $hoje[2] . "-" . $hoje[1]. "-" . $hoje[0];
+            };
+
+        ?>
+    <h1 class = "text-center mb-3">Agendamento de Pacientes (<?php echo $newHoje?>)</h1>
         	<div class = "pl-5 pr-5">
                 <span class = "d-flex d-inline-flex mb-2">
                         <a href="agendaTodos.php"><button class="btn btn-danger btn-md mr-3 ml-1">Exibir Todos</button></a>
