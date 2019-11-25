@@ -1,4 +1,3 @@
-<?php include 'validar.php'?>
 <!DOCTYPE html>
 <html>
 	<head>

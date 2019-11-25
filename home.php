@@ -50,7 +50,7 @@
 										$row = mysqli_fetch_array($busca);
 										$confirmado = $row['confirmados'];
 								?>
-								<div id = "real" class="d-inline-flex bg-success border border-dark mb-1 justify-content-center text-white">
+								<div id = "real" class="d-inline-flex bg-success border border-dark mb-1 justify-content-center text-white ml-1">
 									 <i class = "fa fa-users fa-2x m-2" aria-hidden="true"></i>
 		                            <span class = "estudos text-white mt-1">
 		                                <h6 class = "text-center">Confirmados</h6>
@@ -68,7 +68,7 @@
 										$array = mysqli_fetch_array($busca);
 										$agendado = $array['agendado'];
 								?>
-								<div id = "agen" class="d-inline-flex bg-primary border border-dark mb-1 justify-content-center text-white">
+								<div id = "agen" class="d-inline-flex bg-primary border border-dark mb-1 justify-content-center text-white ml-1">
 									<i class = "fa fa-calendar fa-2x m-2" aria-hidden="true"></i>
 		                            <span class = "estudos text-white">
 		                                <h6 class = "text-center pt-1">Agendados</h6>
@@ -85,7 +85,7 @@
 										$rows = mysqli_fetch_array($busca);
 										$cancelado = $rows['cancelado'];
 ;								?>
-								<div id = "canc" class="d-inline-flex bg-danger border border-dark mb-1 justify-content-center">
+								<div id = "canc" class="d-inline-flex bg-danger border border-dark mb-1 justify-content-center ml-1">
 									<i class = "fa fa-ban fa-2x m-2 text-white" aria-hidden="true"></i>
 		                            <span class = "estudos">
 		                                <h6 class = "text-center text-white pt-1">Cancelados</h6>

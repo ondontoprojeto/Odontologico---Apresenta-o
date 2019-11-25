@@ -1,6 +1,5 @@
 <?php
     session_start();
     session_destroy();
-    $msg = "Logout efetuado!";
-    header("location:login.php?erro=".$msg);
+    header("location:login.php");
 ?>
