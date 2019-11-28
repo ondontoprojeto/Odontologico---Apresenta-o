@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12-Nov-2019 às 20:40
+-- Generation Time: 28-Nov-2019 às 21:19
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.1.27
 
@@ -38,6 +38,13 @@ CREATE TABLE `atendimento` (
   `situacao` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `atendimento`
+--
+
+INSERT INTO `atendimento` (`id`, `paciente_id`, `dentista_id`, `data`, `descricao`, `hora`, `situacao`) VALUES
+(1, 2, 2, '2019-11-28', 'Paciente 1', '09:00:00', 'Agendado');
+
 -- --------------------------------------------------------
 
 --
@@ -48,6 +55,14 @@ CREATE TABLE `atendimento_tipo` (
   `atendimentotipo_id` int(11) NOT NULL,
   `atendimentonome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `atendimento_tipo`
+--
+
+INSERT INTO `atendimento_tipo` (`atendimentotipo_id`, `atendimentonome`) VALUES
+(1, 'Revisão'),
+(2, 'Cirurgia');
 
 -- --------------------------------------------------------
 
@@ -60,6 +75,14 @@ CREATE TABLE `dentista` (
   `nome` varchar(255) DEFAULT NULL,
   `cro` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `dentista`
+--
+
+INSERT INTO `dentista` (`id`, `nome`, `cro`) VALUES
+(1, 'Cristiane', '12345678'),
+(2, 'Adriane', '12345678');
 
 -- --------------------------------------------------------
 
@@ -91,6 +114,13 @@ CREATE TABLE `login` (
   `senha` char(8) DEFAULT NULL,
   `perfil` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `login`
+--
+
+INSERT INTO `login` (`id_user`, `nome`, `login`, `senha`, `perfil`) VALUES
+(1, 'Matheus', 'admin', '123', 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -124,6 +154,14 @@ CREATE TABLE `paciente` (
   `complemento` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `paciente`
+--
+
+INSERT INTO `paciente` (`id`, `nome`, `email`, `cpf`, `rg`, `telefone`, `celular`, `cep`, `endereco`, `bairro`, `nascimento`, `cidade`, `uf`, `doencabase`, `alergia`, `medicamentos`, `cirurgia`, `internacoes`, `pa`, `queixaprinc`, `situacaoficha`, `orcamento`, `complemento`) VALUES
+(1, 'Paciente 1', 'matheusribeirofg1@gmail.com', '173.620.207-32', '12345678', '(21)26662-7474', '(21)99460-6169', '', '', '', '1999-11-16', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 'Jorcelane', 'jorcelane46@gmail.com', '036.508.427-18', '12345678', '(21)2662-7474', '(21)99296-9980', '', '', '', '1974-06-24', '', '', '', '', '', '', '', '', '', '', 'Não', '');
+
 -- --------------------------------------------------------
 
 --
@@ -138,6 +176,13 @@ CREATE TABLE `procedimento` (
   `obs` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `procedimento`
+--
+
+INSERT INTO `procedimento` (`id`, `atendimento_id`, `procedimento_tipo_id`, `valor`, `obs`) VALUES
+(1, 1, 1, 100, 'Nenhuma');
+
 -- --------------------------------------------------------
 
 --
@@ -148,6 +193,15 @@ CREATE TABLE `procedimento_tipo` (
   `id` int(11) NOT NULL,
   `nome` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `procedimento_tipo`
+--
+
+INSERT INTO `procedimento_tipo` (`id`, `nome`) VALUES
+(1, 'Limpeza'),
+(2, 'Restauração'),
+(3, 'Revisão');
 
 --
 -- Indexes for dumped tables
@@ -213,19 +267,19 @@ ALTER TABLE `procedimento_tipo`
 -- AUTO_INCREMENT for table `atendimento`
 --
 ALTER TABLE `atendimento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `atendimento_tipo`
 --
 ALTER TABLE `atendimento_tipo`
-  MODIFY `atendimentotipo_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `atendimentotipo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `dentista`
 --
 ALTER TABLE `dentista`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `estoque`
@@ -237,25 +291,25 @@ ALTER TABLE `estoque`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `procedimento`
 --
 ALTER TABLE `procedimento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `procedimento_tipo`
 --
 ALTER TABLE `procedimento_tipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
